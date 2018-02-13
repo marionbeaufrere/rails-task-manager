@@ -1,0 +1,14 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<h1> List of tasks </h1>
+  <ul style="list-style: none;">
+  <li>
+  <% @tasks.each do |task| %>
+    <% if task.completed == true %>
+      <input id="checkBox" type="checkbox" checked>
+      <%= link_to task.title, show_path(task) %>
+    <% else %>
+      <input id="checkBox" type="checkbox">
+      <%= link_to task.title, show_path(task) %>
+    <% end %>
+  </li>
+  <% end %>
