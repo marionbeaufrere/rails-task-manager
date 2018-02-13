@@ -23,7 +23,7 @@
         <%= link_to task.title, task_path(task) %>
       </h3>
       <%= link_to "Edit", edit_path(task)%>
-      <%= link_to task_path(task), method: "DELETE" do %>
+      <%= link_to task_path(task), method: "DELETE", data: { confirm: "Are you sure??"} do %>
         <i class="fa fa-trash"></i>
       <% end %>
      </li>
@@ -34,3 +34,8 @@
 <%= link_to "Add a new task", tasks_new_path %>
 </h2>
 
+<!-- <script> document.querySelectorAll("h3").addEventListener("click", function(){
+    window.alert("kikoo")
+});
+</script>
+ -->
