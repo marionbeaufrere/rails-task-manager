@@ -1,5 +1,6 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <h1> <%= @task.title %> </h1>
+<%= link_to "Back to list", tasks_path %>
 <div id= "details">
   <h3> <%= @task.details %> </h3>
 </div>
@@ -10,4 +11,4 @@
     <input id="checkBox" type="checkbox" unchecked> This task is not completed yet
   <% end %>
 </div>
-<%= link_to "Back to list", tasks_path %>
+<%= link_to "Edit this task", edit_path %>

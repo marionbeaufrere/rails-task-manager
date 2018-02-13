@@ -10,5 +10,12 @@ body {
   background-color: lightgrey;
 }
 a {
-  text-decoration: none;
+  text-decoration: none !important;
+}
+#input {
+  background-color: none;
+}
+.form-control {
+  width: 300px !important;
+  text-align: center !important;
 }

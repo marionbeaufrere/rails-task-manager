@@ -1,14 +1,36 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <h1> List of tasks </h1>
   <ul style="list-style: none;">
-  <li>
+
   <% @tasks.each do |task| %>
     <% if task.completed == true %>
-      <input id="checkBox" type="checkbox" checked>
-      <%= link_to task.title, show_path(task) %>
+    <li>
+      <h3>
+        <input id="checkBox" type="checkbox" checked>
+        <%= link_to task.title, task_path(task) %>
+      </h3>
+      <%= link_to "Edit", edit_path(task)%>
+      <%= link_to task_path(task), method: "DELETE" do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    </li>
     <% else %>
-      <input id="checkBox" type="checkbox">
-      <%= link_to task.title, show_path(task) %>
+    <li>
+      <h3>
+        <input id="checkBox" type="checkbox">
+        <%= link_to task.title, task_path(task) %>
+      </h3>
+      <%= link_to "Edit", edit_path(task)%>
+      <%= link_to task_path(task), method: "DELETE" do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+     </li>
     <% end %>
-  </li>
   <% end %>
+
+<h2>
+<%= link_to "Add a new task", tasks_new_path %>
+</h2>
+
